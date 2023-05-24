@@ -1,5 +1,6 @@
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Camera } from '@capacitor/camera';
+import { MyPlugin } from 'capacitor-plugin-web-bug-repro';
 
 window.customElements.define(
   'capacitor-welcome',
@@ -91,6 +92,9 @@ window.customElements.define(
 
     connectedCallback() {
       const self = this;
+
+      MyPlugin.echo({ value: 'Hello world!!!' });
+      MyPlugin.echo({ value: 'Hello world!!!' });
 
       self.shadowRoot.querySelector('#take-photo').addEventListener('click', async function (e) {
         try {
